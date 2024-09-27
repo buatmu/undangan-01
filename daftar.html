@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Nama dan URL Undangan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        input {
+            width: 80%;
+            padding: 5px;
+        }
+        button {
+            padding: 5px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Daftar Nama dan URL Undangan</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama Undangan</th>
+                <th>URL Undangan</th>
+                <th>Copy URL</th>
+            </tr>
+        </thead>
+        <tbody id="list"></tbody>
+    </table>
+
+    <script>
+        const baseURL = window.location.origin + '/index.html'; // Ganti dengan URL file undangan yang benar
+        const listElement = document.getElementById('list');
+
+        // Fungsi untuk membuat list undangan dengan URL hash
+        async function loadNames() {
+            const response = await fetch('daftar-nama.txt'); // Pastikan file ini berada di direktori yang sama
+            const text = await response.text();
+            const names = text.split('\n').map(name => name.trim()).filter(Boolean);
+            
+            names.forEach(name => {
+                const tr = document.createElement('tr');
+                const hash = name.replace(/\s+/g, '_');
+                const fullURL = `${baseURL}#${hash}`;
+                
+                // Membuat kolom untuk nama
+                const nameCell = document.createElement('td');
+                nameCell.textContent = name;
+                
+                // Membuat kolom untuk URL
+                const urlCell = document.createElement('td');
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.value = fullURL;
+                input.readOnly = true;
+                urlCell.appendChild(input);
+
+                // Membuat kolom untuk tombol copy
+                const buttonCell = document.createElement('td');
+                const button = document.createElement('button');
+                button.textContent = 'Copy';
+                button.addEventListener('click', () => copyURL(input));
+                buttonCell.appendChild(button);
+
+                tr.appendChild(nameCell);
+                tr.appendChild(urlCell);
+                tr.appendChild(buttonCell);
+                listElement.appendChild(tr);
+            });
+        }
+
+        // Fungsi untuk menyalin URL ke clipboard
+        function copyURL(inputElement) {
+            inputElement.select();
+            document.execCommand('copy');
+            alert('URL berhasil disalin: ' + inputElement.value);
+        }
+
+        // Panggil fungsi untuk memuat nama undangan saat halaman dimuat
+        window.onload = loadNames;
+    </script>
+</body>
+</html>

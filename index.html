@@ -35,7 +35,8 @@
                     <h1 class="bride"></h1>
                 </div>
                 <h5>Dengan Hormat Mengundang:</h5>
-                <h4 class="default"></h4>
+                <h4 id="default"></h4>
+                <!-- <h4 class="default"></h4> -->
                 <button id="text_popup" class="close"><h5>Buka Undangan</h5></button>
             </div>
         </div>
@@ -107,6 +108,33 @@
             <h3>RSVP / Ucapan</h3>
         </article>
     </main>
+    <script>
+        // Fungsi untuk mengganti nama undangan di <h4> dan mengupdate URL hash
+        function updateInvitationName(name) {
+            document.getElementById('default').textContent = name; // Menggunakan ID 'default'
+            const hash = name.replace(/\s+/g, '_'); // Mengganti spasi dengan underscore
+            window.location.hash = hash;
+        }
+
+        // Fungsi untuk membaca daftar nama dari file .txt
+        async function loadNames() {
+            const response = await fetch('daftar-nama.txt'); // Pastikan file ini berada di direktori yang sama
+            const text = await response.text();
+            const names = text.split('\n').map(name => name.trim()).filter(Boolean);
+
+            // Cek apakah ada hash di URL
+            const hash = decodeURIComponent(window.location.hash.substring(1)).replace(/_/g, ' '); // Mengganti underscore dengan spasi
+            if (hash && names.includes(hash)) {
+                updateInvitationName(hash);
+            } else {
+                // Pilih nama pertama sebagai default jika tidak ada hash
+                updateInvitationName(names[0]);
+            }
+        }
+
+        // Panggil fungsi saat halaman dimuat
+        window.onload = loadNames;
+    </script>
 
     <!-- SCRIPT -->
     <script src="in/navbar/navbar-popup.js"></script>
