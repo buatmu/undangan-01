@@ -1,0 +1,58 @@
+title: Romeo & Juliet
+
+========== "DATA" ==========
+
+tanggal-acara: Selasa, 12 Agustus 2025
+
+("GROOM")
+groom: Romeo Montague
+biodata-groom: Anak pertama dari Bapak Lorem dan Ibu Ipsum
+alamat-groom: Langowan
+
+("BRIDE")
+bride: Juliet Capulet
+biodata-bride: Anak ketiga dari Bapak Ipsum dan Ibu Lorem
+alamat-bride: Tondano
+
+========== PEMBERKATAN DAN RESEPSI ==========
+("PEMBERKATAN NIKAH")
+tanggal-pemberkatan: Selasa, 12 Agustus 2025
+waktu-pemberkatan: Pukul 12.00 Wita
+tempat-pemberkatan: Gereja Kristen Sejati
+
+("ACARA RESEPSI")
+tanggal-resepsi: Selasa, 12 Agustus 2025
+waktu-resepsi: Pukul 16.00 Wita
+tempat-resepsi: Gedung Serbaguna Sekali
+
+alamat url pemberkatan
+url-1: https://maps.app.goo.gl/dam7ZzSh87udnS25A
+
+alamat url resepsi
+url-2: https://maps.app.goo.gl/aXKubWHWwM64fqQw5
+
+alamat url google kalender
+url-3: https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MXAzcjZza3E4bGl0bmc0ZWFtcHZrMTJrMzggc2FtdWVsZGF2aWRzdW1pbGF0Lm5ldEBt&amp;tmsrc=samueldavidsumilat.net%40gmail.com
+
+========== "KISAH KAMI" ==========
+
+waktu-cerita-1: Januari 2021
+judul-cerita-1: Pertama Kali Kenal
+isi-cerita-1: liber erroribus curabitur an posse morbi nostra adipiscing labores sodales elit deserunt eu mattis maiestatis delicata prompta repudiare varius idque.
+
+waktu-cerita-2: Mei 2022
+judul-cerita-2: Mulai Dekat
+isi-cerita-2: fastidii delicata appetere nam maiestatis nihil liber commune magnis vocent civibus vis aptent verterem antiopam lectus inceptos evertitur veritus similique.
+
+waktu-cerita-3: Juli 2022
+judul-cerita-3: Menyatakan Cinta
+isi-cerita-3: duis vel intellegat gravida quam reprehendunt ferri mei docendi fugit taciti ultricies inani quidam mediocritatem sit vim mnesarchum dui accusata.
+
+waktu-cerita-4: Agustus 2023
+judul-cerita-4: Tunangan
+isi-cerita-4: fastidii delicata appetere nam maiestatis nihil liber commune magnis vocent civibus vis aptent verterem antiopam lectus inceptos evertitur veritus similique.
+
+========== "GIFT" ==========
+rekening-1: 1728593876
+rekening-2: 172859387612345
+rekening-3: 085172291844
